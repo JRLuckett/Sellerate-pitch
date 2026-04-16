@@ -12,7 +12,7 @@ if (typeof window !== 'undefined') {
 
 const PILLARS = [
   {
-    title: <>Never Setup for Success<br/><span className={styles.pillarAccent}>(Onboarding)</span></>,
+    title: <>Never Set Up for Success<br/><span className={styles.pillarAccent}>(Onboarding)</span></>,
     problem: 'The lack of exec alignment affects the overarching goals of the business and Sellerate\'s roles—where are they starting, what are the expectations, what will be the internal support, what is known, and what is unknown? Furthermore, they provide no baseline metrics (historical conversion rates, etc.) so progress is impossible to measure accurately.',
     fix: 'S-1 Intervention: We build alignment with exec and GTM leadership around the orgs identified value add, market challenges, business impacts, differentiators, target market, sales process, clear qualifiers, and desired reporting. We build the KPI baseline from historical pipeline performace metrics. We define the expectations of the exec team and condense the findings into a master playbook.'
   },
