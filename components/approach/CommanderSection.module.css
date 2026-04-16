@@ -1,0 +1,122 @@
+.section {
+  padding: 96px 0;
+  background: var(--bg);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+/* Text */
+.textSide {  }
+
+.badge {
+  display: inline-block;
+  padding: 4px 12px;
+  background: var(--accent);
+  color: var(--bg);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+
+.name {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: clamp(28px, 3.5vw, 40px);
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  color: var(--text-headline);
+  margin-bottom: 24px;
+}
+
+.quote {
+  font-family: var(--font-body);
+  font-size: 18px;
+  font-style: italic;
+  line-height: 1.5;
+  color: var(--text-headline);
+  padding-left: 24px;
+  border-left: 4px solid var(--border-hover);
+  margin-bottom: 32px;
+}
+
+.stats {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.statRow {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+}
+
+.statLabel {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+
+.statValue {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-headline);
+}
+
+.logos {
+  margin-top: 32px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  opacity: 0.5;
+  line-height: 1.8;
+}
+
+/* Photo */
+.photoSide {}
+
+.photoWrap {
+  position: relative;
+}
+
+.photo {
+  width: 100%;
+  filter: grayscale(1);
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-right: 12px solid var(--accent);
+  border-bottom: 12px solid var(--accent);
+}
+
+.photoCorner {
+  position: absolute;
+  bottom: -16px;
+  left: -16px;
+  width: 96px;
+  height: 96px;
+  border-left: 2px solid var(--border-hover);
+  border-bottom: 2px solid var(--border-hover);
+}
+
+@media (max-width: 1024px) {
+  .grid { grid-template-columns: 1fr; }
+  .photoSide { order: -1; max-width: 500px; }
+}

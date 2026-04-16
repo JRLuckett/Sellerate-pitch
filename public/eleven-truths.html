@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>S-1 — The Eleven Truths</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0A0A0A;
+    --surface: #111111;
+    --accent: #F05A28;
+    --accent-dim: rgba(240, 90, 40, 0.15);
+    --text-primary: #F5F5F5;
+    --text-secondary: #AAAAAA;
+    --text-muted: #666666;
+    --border: #1E1E1E;
+    --border-accent: rgba(240, 90, 40, 0.3);
+    --font-body: 'Inter', -apple-system, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  html { font-size: 16px; -webkit-font-smoothing: antialiased; scroll-behavior: smooth; }
+  body { background: var(--bg); color: var(--text-primary); font-family: var(--font-body); line-height: 1.7; overflow-x: hidden; }
+
+  .page { width: 100%; max-width: 8.5in; margin: 0 auto; padding: 56px 72px; position: relative; }
+  .page-fixed { min-height: 11in; page-break-after: always; break-after: page; }
+  .page-flow { padding-top: 40px; padding-bottom: 40px; }
+
+  .cover { display: flex; flex-direction: column; justify-content: center; align-items: flex-start; }
+  .cover-logo { margin-bottom: 80px; width: 144px; height: 144px; }
+  .cover-logo svg { width: 100%; height: 100%; }
+  .cover-title { font-weight: 900; font-size: 52px; line-height: 1.05; letter-spacing: -0.03em; margin-bottom: 32px; max-width: 520px; }
+  .cover-sub { font-size: 17px; font-style: italic; line-height: 1.7; color: var(--text-secondary); max-width: 480px; margin-bottom: 120px; }
+  .cover-url { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.15em; color: var(--text-muted); }
+  .cover-accent-line { position: absolute; right: 72px; top: 15%; bottom: 15%; width: 3px; background: linear-gradient(180deg, transparent, var(--accent), transparent); opacity: 0.4; }
+
+  .section-label { font-family: var(--font-mono); font-size: 10px; font-weight: 700; letter-spacing: 0.3em; text-transform: uppercase; color: var(--accent); display: block; margin-bottom: 14px; padding-bottom: 10px; border-bottom: 1px solid var(--border-accent); }
+  .section-title { font-weight: 900; font-size: 28px; line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 20px; }
+  .section-body { font-size: 14px; line-height: 1.75; color: var(--text-secondary); }
+  .section-body p { margin-bottom: 12px; }
+  .section-body strong { color: var(--text-primary); font-weight: 600; }
+  .premise-highlight { font-size: 15px; font-weight: 500; font-style: italic; padding: 20px 0; margin: 20px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); line-height: 1.75; }
+
+  .truth { margin-bottom: 28px; padding-bottom: 28px; border-bottom: 1px solid var(--border); page-break-inside: avoid; break-inside: avoid; }
+  .truth:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+  .truth-header { display: flex; align-items: baseline; gap: 14px; margin-bottom: 12px; }
+  .truth-num { font-weight: 900; font-size: 34px; letter-spacing: -0.03em; color: var(--accent); line-height: 1; flex-shrink: 0; min-width: 44px; }
+  .truth-title { font-weight: 800; font-size: 17px; line-height: 1.3; }
+  .truth-body { font-size: 12.5px; line-height: 1.75; color: var(--text-secondary); padding-left: 58px; }
+  .truth-body p { margin-bottom: 10px; }
+  .truth-body p:last-child { margin-bottom: 0; }
+  .truth-body strong { color: var(--text-primary); font-weight: 600; }
+  .truth-callout { margin: 12px 0; padding: 14px 18px; background: var(--accent-dim); border-left: 3px solid var(--accent); font-size: 12.5px; line-height: 1.7; color: var(--text-primary); font-weight: 500; }
+  .truth-list { list-style: none; padding: 0; margin: 12px 0; }
+  .truth-list li { padding: 4px 0; font-size: 12.5px; line-height: 1.6; color: var(--text-secondary); display: flex; gap: 10px; }
+  .truth-list li strong { color: var(--text-primary); font-weight: 700; }
+  .truth-list-num { color: var(--accent); font-family: var(--font-mono); font-weight: 700; font-size: 11px; min-width: 18px; flex-shrink: 0; }
+
+  .scorecard-table { width: 100%; border-collapse: collapse; margin-top: 24px; font-size: 12px; }
+  .scorecard-table th { font-family: var(--font-mono); font-size: 9px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); text-align: left; padding: 10px 14px; border-bottom: 2px solid var(--accent); background: var(--surface); }
+  .scorecard-table th:first-child { width: 36px; text-align: center; }
+  .scorecard-table td { padding: 8px 14px; border-bottom: 1px solid var(--border); vertical-align: top; line-height: 1.4; }
+  .scorecard-table td:first-child { font-family: var(--font-mono); font-weight: 700; font-size: 10px; color: var(--accent); text-align: center; }
+  .scorecard-table td:nth-child(2) { font-weight: 600; color: var(--text-primary); white-space: nowrap; }
+  .scorecard-table .col-working { color: #4ADE80; font-weight: 500; }
+  .scorecard-table .col-broken { color: #F87171; font-weight: 500; }
+  .scorecard-table tr:nth-child(even) td { background: var(--surface); }
+
+  .scoring-grid { display: flex; flex-direction: column; gap: 12px; margin: 24px 0 32px; }
+  .scoring-item { display: flex; gap: 16px; align-items: flex-start; padding: 14px 18px; background: var(--surface); border-left: 3px solid var(--border); }
+  .scoring-item.s-op { border-left-color: #4ADE80; }
+  .scoring-item.s-ack { border-left-color: #FBBF24; }
+  .scoring-item.s-viol { border-left-color: #F87171; }
+  .scoring-label { font-family: var(--font-mono); font-size: 10px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; min-width: 130px; flex-shrink: 0; }
+  .scoring-item.s-op .scoring-label { color: #4ADE80; }
+  .scoring-item.s-ack .scoring-label { color: #FBBF24; }
+  .scoring-item.s-viol .scoring-label { color: #F87171; }
+  .scoring-desc { font-size: 13px; color: var(--text-secondary); line-height: 1.5; }
+
+  .cta-block { margin-top: 40px; padding: 32px; background: var(--surface); border: 1px solid var(--border-accent); text-align: center; }
+  .cta-title { font-weight: 800; font-size: 20px; margin-bottom: 10px; }
+  .cta-sub { font-size: 13px; color: var(--text-secondary); margin-bottom: 20px; line-height: 1.6; }
+  .hc-table { width: 100%; border-collapse: collapse; margin-top: 20px; font-size: 12px; }
+  .hc-table th { font-family: var(--font-mono); font-size: 9px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); text-align: left; padding: 10px 14px; border-bottom: 2px solid var(--accent); background: var(--surface); }
+  .hc-table td { padding: 10px 14px; border-bottom: 1px solid var(--border); vertical-align: top; line-height: 1.4; }
+  .hc-table td:first-child { font-weight: 700; color: var(--text-primary); white-space: nowrap; width: 180px; }
+  .hc-table td:nth-child(2) { color: var(--text-secondary); }
+  .hc-table tr:nth-child(even) td { background: var(--surface); }
+  .cta-link { font-family: var(--font-mono); font-size: 13px; font-weight: 700; letter-spacing: 0.05em; color: var(--accent); text-decoration: none; padding: 12px 28px; border: 2px solid var(--accent); display: inline-block; transition: all 0.2s; }
+  .cta-link:hover { background: var(--accent); color: var(--bg); }
+
+  .page-footer { position: absolute; bottom: 36px; left: 72px; right: 72px; display: flex; justify-content: space-between; align-items: center; padding-top: 14px; border-top: 1px solid var(--border); }
+  .page-footer span { font-family: var(--font-mono); font-size: 9px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-muted); }
+  .page-footer .accent { color: var(--accent); }
+
+  .site-logo { position: fixed; top: 24px; left: 28px; z-index: 1000; width: 40px; height: 40px; opacity: 0; animation: coverIn 0.6s ease 0.3s forwards; }
+  .site-logo svg { width: 100%; height: 100%; }
+
+  .download-btn { position: fixed; top: 32px; right: 32px; z-index: 1000; display: flex; align-items: center; justify-content: center; width: 48px; height: 48px; padding: 0; background: var(--accent); color: #fff; border: none; border-radius: 50%; cursor: pointer; transition: all 0.2s; box-shadow: 0 4px 24px rgba(240, 90, 40, 0.35); }
+  .download-btn:hover { background: #d94e20; transform: translateY(-1px); box-shadow: 0 6px 32px rgba(240, 90, 40, 0.45); }
+  .download-btn svg { width: 20px; height: 20px; fill: currentColor; }
+
+  /* ─── Reading Progress Bar ─── */
+  .progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    background: var(--accent);
+    z-index: 9999;
+    width: 0%;
+    transition: width 0.1s linear;
+    box-shadow: 0 0 10px rgba(240, 90, 40, 0.5);
+  }
+
+  /* ─── Scroll Reveal Animations ─── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(32px);
+    transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .reveal-left {
+    opacity: 0;
+    transform: translateX(-40px);
+    transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .reveal-left.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .reveal-scale {
+    opacity: 0;
+    transform: scale(0.95);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .reveal-scale.visible {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  /* Staggered delays for table rows */
+  .stagger-1 { transition-delay: 0.05s; }
+  .stagger-2 { transition-delay: 0.1s; }
+  .stagger-3 { transition-delay: 0.15s; }
+  .stagger-4 { transition-delay: 0.2s; }
+  .stagger-5 { transition-delay: 0.25s; }
+  .stagger-6 { transition-delay: 0.3s; }
+  .stagger-7 { transition-delay: 0.35s; }
+  .stagger-8 { transition-delay: 0.4s; }
+  .stagger-9 { transition-delay: 0.45s; }
+  .stagger-10 { transition-delay: 0.5s; }
+  .stagger-11 { transition-delay: 0.55s; }
+
+  /* Truth number accent underline draw */
+  .truth-num {
+    position: relative;
+  }
+  .truth-num::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent);
+    transition: width 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.3s;
+  }
+  .truth.visible .truth-num::after {
+    width: 100%;
+  }
+
+  /* Callout glow on reveal */
+  .truth-callout {
+    transition: box-shadow 0.6s ease 0.4s, margin 0.3s ease, padding 0.3s ease;
+  }
+  .truth.visible .truth-callout {
+    box-shadow: -3px 0 20px rgba(240, 90, 40, 0.1);
+  }
+
+  /* Cover entrance */
+  .cover-logo, .cover-title, .cover-sub, .cover-url {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: coverIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+  .cover-logo { animation-delay: 0.2s; }
+  .cover-title { animation-delay: 0.5s; }
+  .cover-sub { animation-delay: 0.8s; }
+  .cover-url { animation-delay: 1.1s; }
+  .cover-accent-line {
+    opacity: 0;
+    animation: lineIn 1.2s ease 0.3s forwards;
+  }
+
+  @keyframes coverIn {
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes lineIn {
+    to { opacity: 0.4; }
+  }
+
+  /* Scoring items entrance */
+  .scoring-item {
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.5s ease;
+  }
+
+  @media print {
+    :root {
+      --bg: #ffffff;
+      --surface: #f5f5f5;
+      --text-primary: #000000;
+      --text-secondary: #333333;
+      --text-muted: #666666;
+      --border: #dddddd;
+      --border-accent: rgba(240, 90, 40, 0.4);
+      --accent-dim: rgba(240, 90, 40, 0.08);
+    }
+    body { background: #fff !important; color: #000 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; overflow: visible; }
+    .page { padding: 64px 52px 44px 52px; }
+    .download-btn, .progress-bar, .site-logo { display: none !important; }
+
+    /* All text overrides */
+    .cover-title, .section-title, .truth-title, .cta-title { color: #000 !important; }
+    .cover-logo { color: var(--accent) !important; border-bottom-color: var(--accent) !important; }
+    .cover-sub { color: #444 !important; }
+    .cover-url { color: #888 !important; }
+    .section-body, .truth-body, .cta-sub, .scoring-desc { color: #333 !important; }
+    .section-body strong, .truth-body strong { color: #000 !important; }
+    .premise-highlight { color: #000 !important; border-color: #ddd !important; }
+    .truth-callout { color: #000 !important; background: rgba(240, 90, 40, 0.06) !important; }
+    .truth { border-bottom-color: #ddd !important; }
+
+    /* Table overrides */
+    .scorecard-table td:nth-child(2) { color: #000 !important; }
+    .scorecard-table .col-working { color: #16a34a !important; }
+    .scorecard-table .col-broken { color: #dc2626 !important; }
+    .hc-table td:first-child { color: #000 !important; }
+    .hc-table td:nth-child(2) { color: #333 !important; }
+    .scorecard-table th, .hc-table th { background: #f0f0f0 !important; }
+    .scorecard-table tr:nth-child(even) td, .hc-table tr:nth-child(even) td { background: #fafafa !important; }
+
+    /* Scoring items */
+    .scoring-item { background: #f5f5f5 !important; }
+    .scoring-label { font-weight: 900 !important; }
+
+    /* CTA block */
+    .cta-block { background: #f5f5f5 !important; border-color: rgba(240, 90, 40, 0.3) !important; }
+    .cta-link { display: none !important; }
+    .cta-print-url { display: block !important; }
+
+    /* Footer */
+    .page-footer { border-top-color: #ddd !important; }
+    .page-footer span { color: #999 !important; }
+    .page-footer .accent { color: var(--accent) !important; }
+
+    /* Cover accent line */
+    .cover-accent-line { opacity: 0.25 !important; }
+
+    /* Animation resets */
+    .reveal, .reveal-left, .reveal-scale { opacity: 1 !important; transform: none !important; transition: none !important; }
+    .truth-num::after { width: 100% !important; }
+    .cover-logo, .cover-title, .cover-sub, .cover-url, .cover-accent-line { opacity: 1 !important; transform: none !important; animation: none !important; }
+  }
+  @page { size: letter; margin: 0.5in 0 0.25in 0; }
+</style>
+</head>
+<body>
+
+<div class="site-logo">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" fill="none">
+    <rect x="20" y="20" width="360" height="360" rx="24" ry="24" fill="none" stroke="#F05A28" stroke-width="6"/>
+    <text x="58" y="92" font-family="Outfit, Inter, sans-serif" font-weight="600" font-size="48" fill="#F05A28">1</text>
+    <text x="200" y="260" font-family="Outfit, Inter, sans-serif" font-weight="700" font-size="200" fill="#F05A28" text-anchor="middle">S</text>
+    <text x="200" y="365" font-family="Outfit, Inter, sans-serif" font-weight="400" font-size="42" fill="#F05A28" text-anchor="middle" letter-spacing="0.12em">VENTURES</text>
+  </svg>
+</div>
+
+<button class="download-btn" onclick="window.print()" title="Save as PDF">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 16l-5-5h3V4h4v7h3l-5 5zM5 18h14v2H5v-2z"/></svg>
+</button>
+
+<!-- COVER -->
+<div class="page page-fixed cover">
+  <div class="cover-accent-line"></div>
+  <div class="cover-logo">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" fill="none">
+      <rect x="20" y="20" width="360" height="360" rx="24" ry="24" fill="none" stroke="#F05A28" stroke-width="6"/>
+      <text x="58" y="92" font-family="Outfit, Inter, sans-serif" font-weight="600" font-size="48" fill="#F05A28">1</text>
+      <text x="200" y="260" font-family="Outfit, Inter, sans-serif" font-weight="700" font-size="200" fill="#F05A28" text-anchor="middle">S</text>
+      <text x="200" y="365" font-family="Outfit, Inter, sans-serif" font-weight="400" font-size="42" fill="#F05A28" text-anchor="middle" letter-spacing="0.12em">VENTURES</text>
+    </svg>
+  </div>
+  <h1 class="cover-title">What Elite GTM Organizations Know</h1>
+  <p class="cover-sub">Eleven operating principles that separate the companies that scale from the ones that stall.</p>
+  <span class="cover-url">s-1ventures.com</span>
+</div>
+
+<!-- PREMISE -->
+<div class="page page-fixed">
+  <span class="section-label">The Premise</span>
+  <h2 class="section-title">These aren't opinions. They're patterns.</h2>
+  <div class="section-body">
+    <p>Across <strong>50+ enterprise software companies</strong>, from pre-revenue startups to organizations that scaled through <strong>$100M+ ARR and IPO</strong>, the same truths surface. Not because one person invented them. Because operators who built elite GTM organizations at companies that became category leaders kept arriving at the same conclusions independently.</p>
+    <p>Different industries. Different products. Different stages. The same eleven things.</p>
+    <p>This is not a methodology document. It is a synthesis of what the best in the field actually know, refined through <strong>thousands of deal cycles, multiple company builds across four continents</strong>, and the kind of failure-tuition that only comes from being personally accountable for the number, not advising on it.</p>
+    <p>Most startups violate most of these truths simultaneously. Not out of ignorance. Out of pressure. ARR is king. The quarter is burning. The foundation gets deprioritized. And the cost compounds quietly until it becomes visible all at once.</p>
+  </div>
+  <div class="premise-highlight">Read these not as advice, but as a diagnostic. Score yourself honestly. The question worth asking after each one is simple: does our team actually operate by this, not in theory, but on a Tuesday morning when the quarter is behind and the pressure is highest?</div>
+  <div class="page-footer"><span>The Eleven Truths</span><span class="accent">S-1 Ventures</span></div>
+</div>
+
+<!-- ALL 11 TRUTHS — flowing continuously -->
+<div class="page page-flow">
+  <span class="section-label">The Eleven Truths</span>
+
+  <div class="truth">
+    <div class="truth-header"><span class="truth-num">01</span><h3 class="truth-title">The foundation must come before the scaling.</h3></div>
+    <div class="truth-body">
+      <p>The sequence is non-negotiable: Foundation, Process, Execution, Scale. You cannot enable a team on a foundation that does not exist. You cannot forecast a pipeline that isn't qualified. You cannot close deals where the value isn't articulated.</p>
+      <p>Every organization that tries to compress or skip the foundation in favor of headcount and pipeline pays for it. In dysfunction that scales. In VP Sales hires that inherit blank slates. In quarters that miss for reasons nobody can explain.</p>
+      <p>The foundation work feels like it can wait. It cannot. By the time it's obviously broken, rebuilding it costs <strong>3–5x</strong> what building it would have cost, and it happens mid-quarter, under pressure, with the team watching.</p>
+      <p>And the operating cadence that enforces the foundation, the <strong>weekly pipeline reviews</strong> (60 min, no exceptions), the <strong>monthly data reviews</strong> (what's converting, what's not, and why), the <strong>quarterly business reviews</strong> (territory-level, not just team-level), is not a scheduling tool. It is a commitment tool. Without the cadence, everything else remains aspirational.</p>
+    </div>
+  </div>
+
+  <div class="truth">
+    <div class="truth-header"><span class="truth-num">02</span><h3 class="truth-title">Discovery is the whole game.</h3></div>
+    <div class="truth-body">
+      <p>The root cause of almost every stalled or lost deal lives in the first two meetings, not the last two. Weak discovery leads to unquantified pain, which leads to a weak champion, which leads to no economic buyer access, which leads to procurement hell, heavy discounting, or no decision.</p>
+      <p>Here is the mechanism most teams miss: the 40% discount you're giving in the final week of the quarter is not a negotiation problem. It is a discovery problem.</p>
+      <div class="truth-callout">Here's the math most teams never run: if your average discount is 30% and your average deal is $150K, every 10-point reduction in discounting through better discovery adds <strong>$15K per deal</strong>. Across 40 deals per quarter, that's <strong>$600K in recovered margin</strong>, without a single additional logo.</div>
+      <p>The paradox: reps who invest the most time in discovery and champion-building close faster in aggregate, because they stop carrying dead deals into the late stages. Speed up by slowing down. The evidence is unambiguous.</p>
+    </div>
+  </div>
+
+  <div class="truth">
+    <div class="truth-header"><span class="truth-num">03</span><h3 class="truth-title">You don't sell software. You teach champions to sell software.</h3></div>
+    <div class="truth-body">
+      <p>The majority of selling happens when you're not in the room. Your champion is presenting to the economic buyer, defending your solution against internal skeptics, and competing against "do nothing" in a meeting you were never invited to. If they can't articulate why buy, why now, and why you, the deal dies there.</p>
+      <p>But here is the distinction that matters most: a coach gives you information. A champion fights for you and takes personal and professional risk on your behalf. Until a champion has walked you through the procurement process, introduced you to legal, or presented the business case to the economic buyer without you in the room, they are a hypothesis, not an asset.</p>
+      <p><strong>Test them. The ones who pass are your real champions. The ones who don't are coaches. Coaches don't close deals.</strong></p>
+    </div>
+  </div>
+
+  <div class="truth">
+    <div class="truth-header"><span class="truth-num">04</span><h3 class="truth-title">Pipeline is courage.</h3></div>
+    <div class="truth-body">
+      <p>Without an abundant pipeline, reps cling to bad deals and tell themselves stories about why each one is going to close. With a deep, healthy pipeline, reps can qualify honestly and walk away from deals that won't close, because they have better alternatives.</p>
+      <p>Pipeline generation is not a quarterly push or a campaign. It is a non-negotiable weekly discipline. Dedicated time. Specific metrics. No exceptions.</p>
+      <div class="truth-callout">The benchmark: a healthy pipeline should be <strong>3–4x the quarterly target</strong> at the start of the quarter, with at least <strong>40% sourced from outbound or rep-generated activity</strong>, not inherited from marketing or expansion.</div>
+      <p>The calm you see in the best revenue organizations is not a culture trait. It is a byproduct of pipeline abundance.</p>
+    </div>
+  </div>
+
+  <div class="truth">
+    <div class="truth-header"><span class="truth-num">05</span><h3 class="truth-title">Negotiation starts in discovery, not at the end of the quarter.</h3></div>
+    <div class="truth-body">
+      <p>Think about two markets. In one, you're selling apples at a farmer's market. Price is the only lever. In the other, you're selling insulin to a diabetic. Price is almost irrelevant because the need is non-negotiable and the cost of inaction is clear.</p>
+      <p>Every interaction before a negotiation is an opportunity to move your buyer from the apples market to the insulin market, by quantifying pain, demonstrating differentiated value, and building a financial case that makes inaction expensive.</p>
+      <p><strong>Negotiation is not a closing skill. It is the accumulated result of everything that happened upstream.</strong></p>
+    </div>
+  </div>
+
+  <div class="truth">
+    <div class="truth-header"><span class="truth-num">06</span><h3 class="truth-title">Qualification is a coaching conversation, not a checklist.</h3></div>
+    <div class="truth-body">
+      <p>MEDDPICC is not a form to fill out before submitting a forecast. It is a framework for understanding what you know, what you don't know, and what needs to happen next. The best revenue leaders use it to coach, not to inspect.</p>
+      <p>The highest-performing sales leaders ask three questions in every deal review:</p>
+      <ul class="truth-list">
+        <li><span class="truth-list-num">1.</span><span><strong>What do we know?</strong> Facts, validated through the buyer's words, not the rep's interpretation.</span></li>
+        <li><span class="truth-list-num">2.</span><span><strong>What don't we know?</strong> Gaps in MEDDPICC that aren't filled, not "TBD," but specifically <em>what</em> is unknown.</span></li>
+        <li><span class="truth-list-num">3.</span><span><strong>What are we going to do about it?</strong> The next action that closes the gap, with a date.</span></li>
+      </ul>
+      <p>The moment qualification becomes an administrative exercise, it loses its power entirely and becomes the thing that gives leaders false confidence in deals that will never close.</p>
+    </div>
+  </div>
+
+  <div class="truth">
+    <div class="truth-header"><span class="truth-num">07</span><h3 class="truth-title">Average productivity per rep is the only metric that matters.</h3></div>
+    <div class="truth-body">
+      <p>Revenue is a lagging indicator. Win rate, deals per person, and average deal size are the levers. When average productivity per rep goes up, nearly every financial metric improves. When it drops, everything falls apart.</p>
+      <div class="truth-callout">If average productivity is 60% of target and you add ten reps, you don't solve the problem. You scale a <strong>$2M deficit into a $4M deficit</strong> while adding $1.5M in fully-loaded comp. You are now paying more to underperform at the same rate.</div>
+      <p>Fix productivity first. Then add capacity. Enablement is the highest-ROI investment available to a sales organization.</p>
+    </div>
+  </div>
+
+  <div class="truth">
+    <div class="truth-header"><span class="truth-num">08</span><h3 class="truth-title">Human behavior drives every outcome.</h3></div>
+    <div class="truth-body">
+      <p>Under every framework, there is psychology. The buyer's decision path runs through <strong>Survive → Thrive → Think</strong>, in that order. Selling ROI to someone in survival mode is like offering investment advice to someone whose house is on fire.</p>
+      <p>The person with greater comfort in the conversation almost always wins it. The rep who moves slowly, asks questions from genuine curiosity, and never telegraphs urgency signals authority. The rep who rushes, over-explains, and chases response signals desperation.</p>
+      <p><strong>Build the pipeline. The composure follows.</strong></p>
+    </div>
+  </div>
+
+  <div class="truth">
+    <div class="truth-header"><span class="truth-num">09</span><h3 class="truth-title">The system must run without you.</h3></div>
+    <div class="truth-body">
+      <p>The test of whether a GTM system has truly been built is whether it keeps running when the builder leaves. Playbooks that live in the founder's head are not playbooks. Processes that require the founder in the room for every important deal are not processes.</p>
+      <p>If your GTM only works because of who's running it, it hasn't been built yet. It's being performed.</p>
+      <div class="truth-callout"><strong>The 30-day test:</strong> If your top-performing AE and your VP Sales both went on leave for 30 days, would the pipeline keep generating, deals keep progressing, and forecasts remain accurate? If the answer is no, you don't have a system. You have a collection of talented individuals.</div>
+    </div>
+  </div>
+
+  <div class="truth">
+    <div class="truth-header"><span class="truth-num">10</span><h3 class="truth-title">Recruiting is the number one job of a sales leader.</h3></div>
+    <div class="truth-body">
+      <p>Not forecasting. Not deal strategy. Not coaching. Recruiting. Because everything downstream depends on who you put in the seat. You hire for intrinsic qualities, drive, curiosity, resilience, coachability, and you train for skills.</p>
+      <p>On the leadership side: by the time a company realizes it needs a VP Sales or CRO, it is already six to nine months behind. The right sequence is to build the foundation first, then hire leadership into a system that works.</p>
+      <p>The data supports this: <strong>VP Sales hires fail at a 50%+ rate industry-wide.</strong> The primary cause isn't the wrong person, it's the wrong sequence. Foundation, then leadership. Never the reverse.</p>
+    </div>
+  </div>
+
+  <div class="truth">
+    <div class="truth-header"><span class="truth-num">11</span><h3 class="truth-title">Bad news must travel fast.</h3></div>
+    <div class="truth-body">
+      <p>The most dangerous thing in a sales organization is silence about what isn't working. Bad news doesn't travel slowly because people are cowards. It travels slowly because most organizations reward optimism.</p>
+      <p>The leaders who get this right don't just tolerate hard truths. They build operating cadences and feedback loops that make surfacing a problem early feel safer than hiding it.</p>
+      <p><strong>Bad news early is actionable. Bad news late is expensive. The difference between those two outcomes is almost entirely a leadership design choice.</strong></p>
+    </div>
+  </div>
+</div>
+
+<!-- SCORECARD + DIAGNOSTIC — flowing -->
+<div class="page page-flow">
+  <span class="section-label">Quick-Reference Scorecard</span>
+  <h2 class="section-title">What Good Looks Like</h2>
+  <table class="scorecard-table">
+    <thead><tr><th>#</th><th>Truth</th><th>Working</th><th>Broken</th></tr></thead>
+    <tbody>
+      <tr><td>01</td><td>Foundation first</td><td class="col-working">4th rep ramps in 45 days</td><td class="col-broken">Every new hire reinvents the wheel</td></tr>
+      <tr><td>02</td><td>Discovery is the game</td><td class="col-working">Avg discount &lt; 15%</td><td class="col-broken">40% discounts in week 12</td></tr>
+      <tr><td>03</td><td>Champion development</td><td class="col-working">Champions present without you</td><td class="col-broken">"Great meeting" but no internal motion</td></tr>
+      <tr><td>04</td><td>Pipeline is courage</td><td class="col-working">3.5x coverage, honest qualification</td><td class="col-broken">Hope-filled forecasts, end-of-quarter panic</td></tr>
+      <tr><td>05</td><td>Negotiation starts early</td><td class="col-working">Buyer defends your price internally</td><td class="col-broken">Procurement runs the process</td></tr>
+      <tr><td>06</td><td>Qualification is coaching</td><td class="col-working">Reps explain gaps, not just stages</td><td class="col-broken">MEDDPICC fields filled, nothing learned</td></tr>
+      <tr><td>07</td><td>Productivity per rep</td><td class="col-working">Adding reps = adding revenue</td><td class="col-broken">Adding reps = adding cost</td></tr>
+      <tr><td>08</td><td>Human behavior</td><td class="col-working">Reps ask from curiosity, not scripts</td><td class="col-broken">Feature dumps and premature ROI slides</td></tr>
+      <tr><td>09</td><td>System runs without you</td><td class="col-working">Founder exits, machine keeps running</td><td class="col-broken">Key person leaves, pipeline collapses</td></tr>
+      <tr><td>10</td><td>Recruiting is #1</td><td class="col-working">Hires succeed because system exists</td><td class="col-broken">VP Sales fails because nothing exists</td></tr>
+      <tr><td>11</td><td>Bad news travels fast</td><td class="col-working">Problems surface in week 2</td><td class="col-broken">Problems surface in week 12</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- DIAGNOSTIC -->
+<div class="page page-flow">
+  <span class="section-label">The Diagnostic</span>
+  <h2 class="section-title">Score your organization.</h2>
+  <div class="section-body"><p>For each of the eleven truths, give yourself one of three ratings:</p></div>
+  <div class="scoring-grid">
+    <div class="scoring-item s-op"><span class="scoring-label">Operationalized</span><span class="scoring-desc">This is built into how we work. It happens without being reminded.</span></div>
+    <div class="scoring-item s-ack"><span class="scoring-label">Acknowledged</span><span class="scoring-desc">We know this matters. We do it inconsistently.</span></div>
+    <div class="scoring-item s-viol"><span class="scoring-label">Violated</span><span class="scoring-desc">We actively do the opposite, usually under pressure.</span></div>
+  </div>
+  <div class="section-body">
+    <p>Most teams score 2–3 as Operationalized, 4–5 as Acknowledged, and the rest as Violated. <strong>The ones in the Violated column are where your next quarter's risk lives.</strong></p>
+    <p style="margin-top: 16px;">The gap between knowing and operating is where growth stalls. It's also where the most expensive mistakes happen. VP Sales hires that fail. Pipelines that don't convert. Forecasts that miss. Raises that get harder.</p>
+    <p>S-1 builds the GTM foundation that closes that gap, in parallel with the revenue push, not instead of it. We don't ask you to pause selling to fix the system. We fix the system while your team keeps selling, and we measure the impact in the same metrics your board already watches.</p>
+  </div>
+  <div class="cta-block">
+    <h3 class="cta-title">Find out which truths your team is violating.</h3>
+    <p class="cta-sub">The GTM Health Check is a structured 4-week diagnostic that scores your organization across seven disciplines. You'll know exactly where the gaps are, what to fix first, and what it's costing you. The output is yours whether you engage further or not.</p>
+
+    <table class="hc-table">
+      <thead><tr><th>Discipline</th><th>What We Evaluate</th></tr></thead>
+      <tbody>
+        <tr><td>Strategy & Planning</td><td>ICP clarity, Value Framework, messaging, competitive positioning, pricing alignment</td></tr>
+        <tr><td>Sales Execution</td><td>Sales process design, qualification rigor, discovery quality, deal progression, forecasting, negotiation</td></tr>
+        <tr><td>Pipeline Generation</td><td>Channel mix, PG discipline, outbound systems, SDR effectiveness, demand generation</td></tr>
+        <tr><td>Tech Stack & Analytics</td><td>Tool rationalization, CRM health, dashboards, attribution, reporting cadence</td></tr>
+        <tr><td>Talent & Enablement</td><td>Org design, hiring profiles, onboarding program, enablement materials, coaching cadence</td></tr>
+        <tr><td>Customer Success</td><td>CS program maturity, renewal process, expansion playbook, value realization tracking</td></tr>
+        <tr><td>Partnerships</td><td>Partner landscape, co-sell motion, marketplace strategy, partner enablement</td></tr>
+      </tbody>
+    </table>
+
+    <a href="https://s-1ventures.com/healthcheck" class="cta-link" style="margin-top: 28px;">Request Your GTM Health Check →</a>
+    <p class="cta-print-url" style="display: none; margin-top: 28px; font-family: var(--font-mono); font-size: 14px; font-weight: 700; letter-spacing: 0.05em; color: var(--accent);">s-1ventures.com</p>
+  </div>
+</div>
+
+<div class="progress-bar" id="progressBar"></div>
+
+<script>
+// Reading progress bar
+function updateProgress() {
+  const scrollTop = window.scrollY;
+  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+  document.getElementById('progressBar').style.width = progress + '%';
+}
+
+// Intersection Observer for scroll reveals
+function initRevealAnimations() {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+  // Observe all truths
+  document.querySelectorAll('.truth').forEach(el => {
+    el.classList.add('reveal');
+    observer.observe(el);
+  });
+
+  // Observe section labels and titles
+  document.querySelectorAll('.section-label, .section-title, .premise-highlight').forEach(el => {
+    el.classList.add('reveal');
+    observer.observe(el);
+  });
+
+  // Observe section body paragraphs
+  document.querySelectorAll('.section-body').forEach(el => {
+    el.classList.add('reveal');
+    observer.observe(el);
+  });
+
+  // Observe callout blocks with scale
+  document.querySelectorAll('.truth-callout').forEach(el => {
+    el.classList.add('reveal-scale');
+    observer.observe(el);
+  });
+
+  // Observe scoring items
+  document.querySelectorAll('.scoring-item').forEach((el, i) => {
+    el.classList.add('reveal');
+    el.classList.add('stagger-' + (i + 1));
+    observer.observe(el);
+  });
+
+  // Observe scorecard table rows with stagger
+  document.querySelectorAll('.scorecard-table tbody tr').forEach((el, i) => {
+    el.classList.add('reveal');
+    el.classList.add('stagger-' + (i + 1));
+    observer.observe(el);
+  });
+
+  // Observe health check table rows
+  document.querySelectorAll('.hc-table tbody tr').forEach((el, i) => {
+    el.classList.add('reveal');
+    el.classList.add('stagger-' + (i + 1));
+    observer.observe(el);
+  });
+
+  // Observe CTA block
+  document.querySelectorAll('.cta-block').forEach(el => {
+    el.classList.add('reveal-scale');
+    observer.observe(el);
+  });
+
+  // Observe scoring grid
+  document.querySelectorAll('.scoring-grid').forEach(el => {
+    el.classList.add('reveal');
+    observer.observe(el);
+  });
+}
+
+// Initialize
+window.addEventListener('scroll', updateProgress, { passive: true });
+window.addEventListener('DOMContentLoaded', () => {
+  updateProgress();
+  initRevealAnimations();
+});
+</script>
+
+</body>
+</html>

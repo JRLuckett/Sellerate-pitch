@@ -1,0 +1,28 @@
+.section { padding: 160px 0; background: #000; color: #fff; overflow: hidden; position: relative; }
+
+.layout { max-width: 960px; margin: 0 auto; }
+
+/* Header */
+.header { margin-bottom: 80px; }
+.badge { display: inline-block; padding: 4px 12px; background: var(--accent); color: #fff; font-family: var(--font-mono); font-size: 11px; font-weight: 900; letter-spacing: 0.4em; text-transform: uppercase; margin-bottom: 32px; }
+.title { font-family: var(--font-display); font-weight: 900; font-size: clamp(40px, 5.5vw, 72px); line-height: 0.9; letter-spacing: -0.04em; text-transform: uppercase; color: #fff; margin-bottom: 32px; }
+.sub { font-family: var(--font-body); font-size: 18px; font-weight: 500; line-height: 1.7; color: rgba(255,255,255,0.6); max-width: 640px; }
+
+/* 3 Pillars */
+.pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 48px; margin-bottom: 80px; padding-top: 64px; border-top: 1px solid rgba(255,255,255,0.08); }
+
+.pillar { position: relative; }
+.pillarNum { font-family: var(--font-display); font-weight: 900; font-size: 48px; letter-spacing: -0.03em; color: rgba(255,255,255,0.06); position: absolute; top: -12px; right: 0; }
+.pillarTitle { font-family: var(--font-display); font-weight: 900; font-size: 20px; text-transform: uppercase; line-height: 1.2; margin-bottom: 16px; color: #fff; }
+.pillarBody { font-family: var(--font-body); font-size: 14px; font-weight: 500; line-height: 1.7; color: rgba(255,255,255,0.5); }
+
+/* CTA */
+.cta { padding-top: 64px; border-top: 1px solid rgba(255,255,255,0.08); display: flex; align-items: center; gap: 48px; }
+.ctaLead { font-family: var(--font-body); font-size: 15px; font-weight: 600; line-height: 1.7; color: rgba(255,255,255,0.5); flex: 1; font-style: italic; }
+.ctaButton { display: inline-flex; align-items: center; gap: 12px; padding: 20px 40px; background: var(--accent); color: #fff; font-family: var(--font-display); font-weight: 900; font-size: 14px; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; transition: all 0.25s ease; white-space: nowrap; flex-shrink: 0; }
+.ctaButton:hover { background: #fff; color: #000; transform: translateY(-2px); box-shadow: 0 8px 32px rgba(240, 90, 40, 0.3); }
+
+@media (max-width: 1024px) {
+  .pillars { grid-template-columns: 1fr; gap: 40px; }
+  .cta { flex-direction: column; align-items: flex-start; }
+}

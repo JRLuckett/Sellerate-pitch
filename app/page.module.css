@@ -1,0 +1,391 @@
+.main {
+  width: 100%;
+  scroll-behavior: smooth;
+}
+.main::-webkit-scrollbar {
+  display: none;
+}
+
+/* SECTION 1: HERO */
+.hero {
+  min-height: 100vh;
+  padding-top: 120px;
+  padding-bottom: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 24px;
+}
+
+.heroContent {
+  max-width: 900px;
+  text-align: left;
+}
+
+.heroTitle {
+  font-family: var(--font-display);
+  font-size: clamp(36px, 5vw, 64px);
+  font-weight: 600;
+  line-height: 1.15;
+  color: var(--text-headline);
+  letter-spacing: -0.01em;
+}
+
+.heroBody {
+  font-size: 20px;
+  line-height: 1.6;
+  color: var(--text-body);
+  margin-top: 32px;
+  max-width: 750px;
+}
+
+/* SECTION 2: PILLARS */
+.pillarsSection {
+  min-height: 100vh;
+  padding-top: 120px;
+  padding-bottom: 120px;
+  background: var(--bg-raised);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 24px;
+  width: 100%;
+}
+
+.pillarGrid2x2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  max-width: 1100px;
+  margin-top: 32px;
+}
+
+.pillarCard2x2 {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  border-right: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  transition: background 0.3s ease;
+}
+
+.pillarCard2x2:nth-child(2n) {
+  border-right: none;
+}
+.pillarCard2x2:nth-child(n+3) {
+  border-bottom: none;
+}
+
+.pillarCardOrange {
+  background: var(--accent);
+  color: #000;
+  border-color: rgba(0,0,0,0.1) !important;
+}
+
+.pillarCardDark {
+  background: #111;
+  color: var(--text-headline);
+}
+
+.pillarNumber {
+  font-family: var(--font-display);
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 700;
+  line-height: 1;
+}
+
+.pillarCardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.pillarCardTitle {
+  font-family: var(--font-display);
+  font-size: clamp(18px, 2vw, 24px);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-top: 16px;
+  text-transform: uppercase;
+}
+
+.pillarCardBody {
+  font-family: var(--font-body);
+  font-size: 14px;
+  line-height: 1.6;
+  margin-top: 24px;
+  font-weight: 500;
+}
+
+.pillarCardOrange .pillarCardTitle,
+.pillarCardOrange .pillarCardBody,
+.pillarCardOrange .pillarNumber,
+.pillarCardOrange .pillarAccent {
+  color: #000;
+}
+
+.pillarAccent {
+  color: var(--accent);
+}
+
+.pillarCardDark .pillarCardTitle,
+.pillarCardDark .pillarNumber {
+  color: var(--text-headline);
+}
+.pillarCardDark .pillarCardBody {
+  color: var(--text-body);
+}
+
+.pillarCardExpandable {
+  display: flex;
+  flex-direction: column;
+  height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.pillarCardExpandable.open {
+  height: auto;
+  opacity: 1;
+  margin-top: 16px;
+}
+
+@media (max-width: 767px) {
+  .pillarGrid2x2 {
+    grid-template-columns: 1fr;
+    max-height: 70vh;
+    overflow-y: auto;
+  }
+  .pillarCard2x2 {
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+}
+
+/* SECTION 3: PUNCTUATION MARK */
+.punctuationSection {
+  min-height: 100vh;
+  padding-top: 120px;
+  padding-bottom: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg);
+  text-align: center;
+  padding: 0 24px;
+  position: relative;
+}
+
+.punctuationSection::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: radial-gradient(circle at center, rgba(240, 90, 40, 0.05) 0%, transparent 70%);
+}
+
+.punctuationText {
+  font-size: clamp(36px, 5vw, 80px) !important;
+  line-height: 1.1;
+  text-transform: none !important;
+  color: var(--text-headline);
+  position: relative;
+  z-index: 1;
+}
+
+/* SECTION 4: GTM OS IMPACT */
+.impactSection {
+  min-height: 100vh;
+  padding-top: 120px;
+  padding-bottom: 120px;
+  background: var(--bg-raised);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 24px;
+  width: 100%;
+}
+
+.impactGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 40px;
+  width: 100%;
+}
+
+/* SECTION 5: PRODUCT EXPANSION */
+.expansionSection {
+  min-height: 100vh;
+  padding-top: 120px;
+  padding-bottom: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 24px;
+  width: 100%;
+  background: var(--bg);
+}
+
+.expansionWrapper {
+  max-width: 900px;
+  width: 100%;
+  max-height: 70vh; /* Keep it inside viewport */
+  display: flex;
+  flex-direction: column;
+}
+
+.accordionScrollable {
+  overflow-y: auto;
+  border-bottom: 1px solid var(--structural-line);
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.accordionScrollable::-webkit-scrollbar {
+  display: none;
+}
+
+/* SHARED ACCORDION COMPONENTS (Used in Sections 2 & 5) */
+.accordionContainer {
+  margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  background: transparent;
+  border-top: 1px solid var(--structural-line);
+}
+
+.accordionItem {
+  background: transparent;
+}
+
+.accordionHeader {
+  width: 100%;
+  text-align: left;
+  padding: 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: padding-left var(--duration-fast) ease;
+}
+
+.accordionHeader:hover {
+  padding-left: 16px;
+}
+
+.accordionHeader h3 {
+  font-size: 18px;
+}
+
+.accordionIcon {
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 24px;
+  transition: transform var(--duration-fast) ease;
+}
+
+.accordionIcon.open {
+  transform: rotate(45deg);
+}
+
+.accordionContent {
+  padding: 0 0 24px 0;
+  display: none;
+}
+
+.accordionContent.open {
+  display: block;
+  animation: slideDown 0.3s ease forwards;
+}
+
+.pricingBlock {
+  margin-top: 16px;
+  padding: 16px;
+  background: var(--bg-card);
+  border-left: 2px solid var(--accent);
+}
+
+.pricingList {
+  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  list-style: none;
+}
+
+.pricingList li {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  display: flex;
+  gap: 12px;
+}
+
+.pricingList span {
+  color: var(--accent);
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* SECTION 6: DIVISION OF POWER */
+.divisionSection {
+  min-height: 100vh;
+  padding-top: 120px;
+  padding-bottom: 120px;
+  background: var(--bg-raised);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 24px;
+}
+
+.divisionGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  margin-top: 40px;
+  width: 100%;
+}
+
+.divisionList {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.divisionList li {
+  padding-left: 16px;
+  border-left: 1px solid var(--border-accent);
+  font-size: 14px;
+}
+
+.ctaWrapper {
+  margin-top: 48px;
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 1024px) {
+  .impactGrid {
+    grid-template-columns: 1fr;
+    overflow-y: auto;
+    max-height: 50vh;
+  }
+}
+
+@media (max-width: 767px) {
+  .divisionGrid {
+    grid-template-columns: 1fr;
+    overflow-y: auto;
+    max-height: 50vh;
+  }
+}

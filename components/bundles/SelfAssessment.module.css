@@ -1,0 +1,242 @@
+.section {
+  padding: 120px 0;
+  background: var(--bg);
+  border-top: 1px solid var(--border);
+}
+
+/* Header */
+.header { max-width: 720px; margin-bottom: 64px; }
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+.eyebrow::before { content: '■'; font-size: 8px; }
+
+.title {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: clamp(36px, 5vw, 64px);
+  line-height: 0.9;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  color: var(--text-headline);
+  margin-bottom: 24px;
+}
+
+.accent { color: var(--accent); }
+
+.sub {
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  max-width: 560px;
+}
+
+/* Legend */
+.legend {
+  display: flex;
+  gap: 32px;
+  padding: 24px 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 48px;
+}
+
+.legendItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.legendDot {
+  flex-shrink: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-top: 3px;
+}
+
+.dotGreen { background: #22c55e; }
+.dotAmber { background: #f59e0b; }
+.dotRed { background: #ef4444; }
+
+.legendLabel {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: var(--text-headline);
+  display: block;
+}
+
+.legendDesc {
+  font-family: var(--font-body);
+  font-size: 11px;
+  color: var(--text-muted);
+  display: block;
+  margin-top: 2px;
+}
+
+/* Truths */
+.truths {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  margin-bottom: 64px;
+}
+
+.truth {
+  background: var(--bg);
+  padding: 32px;
+  transition: border-left-color 0.3s ease, background 0.3s ease;
+  border-left: 4px solid transparent;
+}
+
+.truth_operationalized { border-left-color: #22c55e; background: rgba(34, 197, 94, 0.03); }
+.truth_acknowledged { border-left-color: #f59e0b; background: rgba(245, 158, 11, 0.03); }
+.truth_violated { border-left-color: #ef4444; background: rgba(239, 68, 68, 0.03); }
+
+.truthHeader {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.truthNum {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 32px;
+  color: var(--border-hover);
+  flex-shrink: 0;
+  width: 48px;
+}
+
+.truthText {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 16px;
+  text-transform: uppercase;
+  color: var(--text-headline);
+  line-height: 1.3;
+}
+
+/* Working / Broken signals */
+.signals {
+  display: flex;
+  gap: 32px;
+  margin-bottom: 20px;
+  padding-left: 64px;
+}
+
+.signal { flex: 1; }
+
+.signalLabel {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  display: block;
+  margin-bottom: 4px;
+}
+
+.signalValue {
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+/* Rating buttons */
+.ratingButtons {
+  display: flex;
+  gap: 8px;
+  padding-left: 64px;
+}
+
+.ratingBtn {
+  padding: 6px 16px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text-muted);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.ratingBtn:hover { background: var(--bg-card-hover); color: var(--text-headline); }
+
+.btnGreen.btnActive { background: rgba(34, 197, 94, 0.15); border-color: #22c55e; color: #22c55e; }
+.btnAmber.btnActive { background: rgba(245, 158, 11, 0.15); border-color: #f59e0b; color: #f59e0b; }
+.btnRed.btnActive { background: rgba(239, 68, 68, 0.15); border-color: #ef4444; color: #ef4444; }
+
+/* Results */
+.results {
+  padding-top: 48px;
+  border-top: 1px solid var(--border);
+}
+
+.resultBar {
+  display: flex;
+  height: 32px;
+  border-radius: 4px;
+  overflow: hidden;
+  gap: 2px;
+  margin-bottom: 32px;
+}
+
+.resultSegment {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 14px;
+  color: #000;
+  transition: width 0.5s ease;
+  min-width: 0;
+}
+
+.segGreen { background: #22c55e; }
+.segAmber { background: #f59e0b; }
+.segRed { background: #ef4444; }
+
+.resultMessage {
+  max-width: 720px;
+}
+
+.resultText {
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-style: italic;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  margin-bottom: 32px;
+}
+
+/* Responsive */
+@media (max-width: 767px) {
+  .legend { flex-direction: column; gap: 16px; }
+  .signals { flex-direction: column; gap: 12px; padding-left: 0; }
+  .ratingButtons { padding-left: 0; flex-wrap: wrap; }
+  .truthHeader { gap: 12px; }
+  .truthNum { width: 36px; font-size: 24px; }
+}

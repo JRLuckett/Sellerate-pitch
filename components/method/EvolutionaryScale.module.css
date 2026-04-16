@@ -1,0 +1,49 @@
+.section { padding: 160px 0; background: var(--bg); }
+
+.header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 128px; padding-bottom: 64px; border-bottom: 1px solid var(--border-hover); gap: 32px; }
+.eyebrow { font-family: var(--font-mono); font-size: 11px; font-weight: 900; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); display: block; margin-bottom: 16px; }
+.title { font-family: var(--font-display); font-weight: 900; font-size: clamp(32px, 4vw, 52px); letter-spacing: -0.03em; text-transform: uppercase; color: var(--text-headline); margin-bottom: 16px; line-height: 1; }
+.sub { font-family: var(--font-body); font-size: 18px; font-weight: 500; line-height: 1.6; color: var(--text-muted); max-width: 700px; letter-spacing: 0; text-transform: none; }
+
+.progress { display: flex; gap: 4px; flex-shrink: 0; }
+.progressActive { width: 80px; height: 8px; background: var(--accent); }
+.progressInactive { width: 80px; height: 8px; background: var(--border); }
+
+/* Grid */
+.grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1px; background: var(--border-hover); }
+
+.card { background: var(--bg); padding: 40px; position: relative; overflow: hidden; transition: opacity 0.6s ease; }
+.card_dim { opacity: 0.15; cursor: pointer; }
+.card_dim:hover { opacity: 1; }
+
+.cardHeader { margin-bottom: 48px; }
+.num { font-family: var(--font-display); font-weight: 900; font-size: 56px; letter-spacing: -0.03em; color: var(--border); display: block; margin-bottom: 8px; transition: color var(--duration-med) ease; }
+.numActive { color: var(--accent); }
+.card:hover .num { color: var(--accent); }
+.cardStage { font-family: var(--font-display); font-weight: 900; font-size: 22px; text-transform: uppercase; line-height: 1.1; color: var(--text-headline); margin-bottom: 8px; }
+.cardPhase { font-family: var(--font-mono); font-size: 10px; font-weight: 900; letter-spacing: 0.3em; text-transform: uppercase; color: var(--accent); }
+
+.details { display: flex; flex-direction: column; gap: 24px; }
+.details li { display: flex; flex-direction: column; gap: 4px; }
+.detailLabel { font-family: var(--font-mono); font-size: 10px; font-weight: 900; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); }
+.detailValue { font-family: var(--font-body); font-size: 14px; font-weight: 700; color: var(--text-body); }
+
+.bar { margin-top: 48px; height: 4px; width: 100%; background: var(--border); position: relative; }
+.barFill { position: absolute; inset: 0; background: var(--accent); width: 0; transition: width 1s ease; }
+.barActive { width: 100%; }
+.card:hover .barFill { width: 100%; }
+
+.engagementNote {
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-style: italic;
+  font-weight: 500;
+  color: var(--accent);
+  text-align: center;
+  margin-top: 64px;
+  opacity: 0.8;
+}
+
+@media (max-width: 1400px) { .grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 1024px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 767px) { .grid { grid-template-columns: 1fr; } .progress { display: none; } }

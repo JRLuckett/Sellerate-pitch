@@ -1,0 +1,217 @@
+.section {
+  padding: 96px 0 48px;
+  background: var(--accent);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: clamp(28px, 3.5vw, 48px);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  color: #000;
+  margin-bottom: 24px;
+}
+
+.accent { color: #000; }
+
+.sub {
+  font-family: var(--font-body);
+  font-size: 17px;
+  color: #fff;
+  line-height: 1.6;
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+/* Infographic layout */
+.infographic {
+  position: relative;
+  max-width: 900px;
+  margin: -110px auto 0;
+  aspect-ratio: 1;
+}
+
+/* Background diamond — dark silhouette on orange */
+.bgDiamond {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 45%;
+  height: 45%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  border: none;
+  background: rgba(0, 0, 0, 0.06);
+  pointer-events: none;
+}
+
+/* Connecting lines overlay */
+.lines {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Center circle + triangle */
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 240px;
+  height: 240px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.circle {
+  position: absolute;
+  inset: 0;
+  border: 1.5px solid rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
+  background: #000;
+}
+
+.circleGlow {
+  display: none;
+}
+
+.triangle {
+  width: 150px;
+  height: 150px;
+  position: relative;
+  z-index: 1;
+}
+
+.triLabel {
+  position: absolute;
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 13px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.7);
+  z-index: 1;
+}
+
+.triTop { top: 55px; left: 50%; transform: translateX(-50%); }
+.triLeft { bottom: 58px; left: 52px; }
+.triRight { bottom: 58px; right: 48px; }
+
+/* Text cards — outer corners */
+.riskText {
+  position: absolute;
+  max-width: 260px;
+  z-index: 3;
+}
+
+.topLeft {
+  top: calc(5% + 80px);
+  left: 0;
+}
+
+.topRight {
+  top: calc(5% + 80px);
+  right: 0;
+}
+
+.bottomLeft {
+  bottom: calc(5% + 80px);
+  left: 0;
+}
+
+.bottomRight {
+  bottom: calc(5% + 80px);
+  right: 0;
+}
+
+.riskTitle {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 22px;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  color: #000;
+  margin-bottom: 8px;
+}
+
+.riskDesc {
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.5;
+  color: rgba(0, 0, 0, 0.85);
+}
+
+/* Icon diamonds — positioned between text and circle */
+.iconWrap {
+  position: absolute;
+  z-index: 3;
+}
+
+.icon_topLeft { top: 35%; left: 35%; transform: translate(-50%, -50%); }
+.icon_topRight { top: 35%; right: 35%; transform: translate(50%, -50%); }
+.icon_bottomLeft { bottom: 35%; left: 35%; transform: translate(-50%, 50%); }
+.icon_bottomRight { bottom: 35%; right: 35%; transform: translate(50%, 50%); }
+
+.iconDiamond {
+  width: 96px;
+  height: 96px;
+  transform: rotate(45deg);
+  border: 1.5px solid #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.iconInner {
+  transform: rotate(-45deg);
+  width: 48px;
+  height: 48px;
+  color: #fff;
+}
+
+.iconInner svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .infographic {
+    aspect-ratio: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .riskText {
+    position: static;
+    max-width: 100%;
+    text-align: left !important;
+    padding: 24px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+  }
+
+  .riskText:last-of-type {
+    border-bottom: none;
+  }
+
+  .iconWrap,
+  .center,
+  .bgDiamond,
+  .lines { display: none; }
+}

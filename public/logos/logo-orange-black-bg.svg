@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" fill="none">
+  <rect width="600" height="600" fill="#000000"/>
+  <rect x="120" y="120" width="360" height="360" rx="24" ry="24" fill="none" stroke="#EB5E28" stroke-width="6"/>
+  <text x="158" y="212" font-family="Outfit, sans-serif" font-weight="600" font-size="48" fill="#EB5E28">1</text>
+  <text x="300" y="380" font-family="Outfit, sans-serif" font-weight="700" font-size="200" fill="#EB5E28" text-anchor="middle">S</text>
+  <text x="300" y="485" font-family="Outfit, sans-serif" font-weight="400" font-size="42" fill="#EB5E28" text-anchor="middle" letter-spacing="0.12em">VENTURES</text>
+</svg>

@@ -1,0 +1,57 @@
+.section { padding: 160px 0; background: #fff; color: #000; overflow: hidden; position: relative; }
+
+.grid { display: grid; grid-template-columns: 5fr 7fr; gap: 64px; }
+
+/* Left sticky */
+.left { position: sticky; top: 128px; height: fit-content; }
+.badge { display: inline-block; padding: 4px 12px; background: #000; color: #fff; font-family: var(--font-mono); font-size: 11px; font-weight: 900; letter-spacing: 0.4em; text-transform: uppercase; margin-bottom: 32px; }
+.title { font-family: var(--font-display); font-weight: 900; font-size: clamp(48px, 6vw, 80px); line-height: 0.85; letter-spacing: -0.04em; text-transform: uppercase; color: #000; margin-bottom: 48px; position: relative; }
+
+/* Large decorative watermark behind title */
+.watermark {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: clamp(300px, 36vw, 520px);
+  line-height: 1;
+  letter-spacing: -0.05em;
+  color: rgba(0,0,0,0.04);
+  position: absolute;
+  top: 0px;
+  right: -20px;
+  pointer-events: none;
+  user-select: none;
+  transition: opacity 0.3s ease;
+}
+
+.sub { font-family: var(--font-body); font-size: 18px; font-weight: 700; line-height: 1.6; color: rgba(0,0,0,0.6); padding-left: 32px; border-left: 4px solid var(--accent); margin-bottom: 40px; }
+
+/* Accent divider */
+.divider { width: 48px; height: 3px; background: var(--accent); margin-bottom: 40px; }
+
+/* Counter */
+.counter { font-family: var(--font-mono); font-size: 12px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(0,0,0,0.3); }
+.counterAccent { color: var(--accent); }
+
+/* Right truths */
+.right { display: flex; flex-direction: column; gap: 0; }
+
+.truthRow { display: flex; align-items: flex-start; gap: 32px; padding: 40px; border-bottom: 1px solid rgba(0,0,0,0.06); transition: all var(--duration-med) ease; position: relative; }
+.truthRow::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 0; background: var(--accent); transition: width var(--duration-med) ease; }
+.truthRow:hover { background: #000; color: #fff; }
+.truthRow:hover::before { width: 4px; }
+.truthNum { font-family: var(--font-display); font-weight: 900; font-size: 36px; letter-spacing: -0.03em; color: var(--accent); flex-shrink: 0; margin-top: 4px; transition: color var(--duration-med) ease; }
+.truthRow:hover .truthNum { color: #fff; }
+.truthTitle { font-family: var(--font-display); font-weight: 900; font-size: 22px; text-transform: uppercase; line-height: 1.2; margin-bottom: 12px; }
+.truthBody { font-family: var(--font-body); font-size: 13px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; line-height: 1.6; color: rgba(0,0,0,0.5); transition: color var(--duration-med) ease; }
+.truthRow:hover .truthBody { color: rgba(255,255,255,0.6); }
+
+/* Remaining teaser */
+.remaining { margin-top: 24px; padding: 20px 0; border-top: 1px dashed rgba(0,0,0,0.1); }
+.remainingLabel { font-family: var(--font-mono); font-weight: 700; font-size: 11px; letter-spacing: 0.15em; color: var(--accent); margin-right: 8px; }
+.remainingText { font-family: var(--font-body); font-size: 13px; font-weight: 500; line-height: 1.7; color: rgba(0,0,0,0.4); font-style: italic; }
+
+.ctaWrap { margin-top: 32px; }
+.ctaButton { display: inline-flex; align-items: center; gap: 16px; padding: 24px 48px; background: #000; color: #fff; font-family: var(--font-display); font-weight: 900; font-size: 14px; letter-spacing: 0.2em; text-transform: uppercase; transition: all var(--duration-med) ease; }
+.ctaButton:hover { background: var(--accent); }
+
+@media (max-width: 1024px) { .grid { grid-template-columns: 1fr; } .left { position: static; } .watermark { font-size: 120px; right: 0; } }
