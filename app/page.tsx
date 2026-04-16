@@ -378,7 +378,7 @@ export default function SelleratePitchPage() {
 
           <div className={styles.divisionGrid}>
             <div className="card">
-              <h3 className="h3">S-1 Interventions <br/><span className="accent-text" style={{fontSize: 16}}>(Strategic & Diagnostic Layer)</span></h3>
+              <h3 className="h3">S-1 Operates <br/><span className="accent-text" style={{fontSize: 16}}>(Strategic & Diagnostic Layer)</span></h3>
               <ul className={styles.divisionList}>
                 <li className="body-md"><strong>Executive Alignment & Reporting:</strong> We define executive alignment, outline exact responsibilities, and enforce ongoing, transparent reporting to completely eliminate the void between the client organization and Sellerate.</li>
                 <li className="body-md"><strong>Foundation Building:</strong> We deploy the complete GTM architecture—constructing the master playbooks, competitive frameworks, enablement training structures, and the overarching outbound strategy that powers the execution floor.</li>
@@ -387,7 +387,7 @@ export default function SelleratePitchPage() {
             </div>
 
             <div className="card">
-              <h3 className="h3">Sellerate Operations <br/><span className="muted-text" style={{fontSize: 16}}>(Execution & Scaling Layer)</span></h3>
+              <h3 className="h3">Sellerate Executes <br/><span className="muted-text" style={{fontSize: 16}}>(Execution & Scaling Layer)</span></h3>
               <ul className={styles.divisionList}>
                 <li className="body-md"><strong>Elite SDR Execution:</strong> Your team owns the outbound activity, running the plays powered by verified data instead of assumptions.</li>
                 <li className="body-md"><strong>Account Management:</strong> Your AMs retain full control over day-to-day SDR management, utilizing S-1's intelligence to instantly adjust strategy in the field.</li>
