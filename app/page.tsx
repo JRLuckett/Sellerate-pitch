@@ -17,7 +17,7 @@ const PILLARS = [
     fix: 'S-1 Intervention: We build alignment with exec and GTM leadership around the orgs identified value add, market challenges, business impacts, differentiators, target market, sales process, clear qualifiers, and desired reporting. We build the KPI baseline from historical pipeline performace metrics. We define the expectations of the exec team and condense the findings into a master playbook.'
   },
   {
-    title: <>The REAL Reason Why?<br/><span className={styles.pillarAccent}>(Enablement)</span></>,
+    title: <>The REAL Reason Why<br/><span className={styles.pillarAccent}>(Enablement)</span></>,
     problem: 'SDRs need more than product basics. When a prospect pushes back, the SDR lacks confidence because they were never enabled to defend the position. They need to understand what they are pitching at a fundamental level before they begin their outreach. If they learn the what, why, how, and when prior to building the outbound machine, then when they start carrying KPIs they can focus purely on execution.',
     fix: 'S-1 Intervention: We enable the fundamentals. We train your SDRs to answer the critical 4 questions to be audible ready. We establish a transparent operating rhythm to ensure expectations and accountability flow in both directions (SDR:AE).'
   },
