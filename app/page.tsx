@@ -396,11 +396,6 @@ export default function SelleratePitchPage() {
             </div>
           </div>
 
-          <div className={styles.ctaWrapper}>
-            <a href="/Proposal.pdf" target="_blank" rel="noopener noreferrer" className="btn-primary btn-primary--accent">
-              Download the Partnership Proposal (PDF)
-            </a>
-          </div>
         </div>
       </section>
 
