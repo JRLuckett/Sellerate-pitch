@@ -13,22 +13,22 @@ if (typeof window !== 'undefined') {
 const PILLARS = [
   {
     title: <>Never Set Up for Success<br/><span className={styles.pillarAccent}>(Onboarding)</span></>,
-    problem: 'The lack of exec alignment affects the overarching goals of the business and Sellerate\'s roles—where are they starting, what are the expectations, what will be the internal support, what is known, and what is unknown? Furthermore, they provide no baseline metrics (historical conversion rates, etc.) so progress is impossible to measure accurately.',
+    problem: 'Poor executive alignment obscures the overarching business goals and Sellerate\'s role. Teams lack starting points, expectations, and clear support systems. Furthermore, clients provide no historical conversion metrics, ensuring you cannot measure progress.',
     fix: 'S-1 Intervention: We build alignment with exec and GTM leadership around the orgs identified value add, market challenges, business impacts, differentiators, target market, sales process, clear qualifiers, and desired reporting. We build the KPI baseline from historical pipeline performace metrics. We define the expectations of the exec team and condense the findings into a master playbook.'
   },
   {
     title: <>The REAL Reason Why<br/><span className={styles.pillarAccent}>(Enablement)</span></>,
-    problem: 'SDRs need more than product basics. When a prospect pushes back, the SDR lacks confidence because they were never enabled to defend the position. They need to understand what they are pitching at a fundamental level before they begin their outreach. If they learn the what, why, how, and when prior to building the outbound machine, then when they start carrying KPIs they can focus purely on execution.',
+    problem: 'SDRs need more than product basics. When a prospect pushes back, the SDR lacks confidence because no one enabled them to defend the position. They must understand the pitch before they begin outreach. If they learn the product variables prior to building the outbound machine, they can focus on execution.',
     fix: 'S-1 Intervention: We enable the fundamentals. We train your SDRs to answer the critical 4 questions to be audible ready. We establish a transparent operating rhythm to ensure expectations and accountability flow in both directions (SDR:AE).'
   },
   {
     title: <>One-Way Street<br/><span className={styles.pillarAccent}>(The Feedback Loop)</span></>,
-    problem: 'An SDR books a meeting. The opp is created. Then the deal dies. Why? When a deal goes quiet after the handoff, the feedback loop completely stops. The SDR never finds out if they booked a terrible prospect using bad messaging, or if the AE simply blew the discovery call. Without data flowing backward, Sellerate cannot course-correct.',
-    fix: 'S-1 Intervention: We analyze the opp with CRM data and raw transcripts. S-1 audits each meeting transcripts—uncovering overarching strategic pivot points—and feeds that intelligence back to the Sellerate AM so the SDR can pivot their strategy, rather than just increasing their output to hit the number.'
+    problem: 'An SDR books a meeting. The opp is created. Then the deal dies. Why? After the handoff, the feedback loop stops. Your SDR never finds out if they booked a mismatched prospect using bad messaging, or if the AE blew the discovery call. Without data flowing backward, Sellerate cannot course-correct.',
+    fix: 'S-1 Intervention: We analyze the opportunity with CRM data and raw transcripts. S-1 audits each meeting to uncover strategic pivot points. We feed that intelligence back to the Sellerate AM so the SDR can pivot their strategy instead of increasing output to hit a quota.'
   },
   {
     title: <>Finger-Pointing<br/><span className={styles.pillarAccent}>(The Consequence)</span></>,
-    problem: 'Lack of pipeline traction breeds internal politics. Sales reps blame the SDRs for low-quality leads; SDRs feel lost because adjustment by the reps were never communicated. The executive team inevitably questions Sellerate’s effectiveness based purely on closed-won revenue vs. spend, rather than diagnosing the root cause.',
+    problem: 'Low pipeline traction forces internal politics. Sales reps blame the SDRs for low-quality leads; SDRs feel lost because sales leadership conceals adjustments. The executive team questions Sellerate’s effectiveness based on closed-won revenue versus spend, rather than diagnosing the root cause.',
     fix: 'S-1 Intervention: We report the reality so leadership can act on the findings. We handle all meeting reviews and pipeline reporting with the AEs, Management, and Execs. Bi-weekly, we deliver the truth to the C-suite. We change the conversation from "Sellerate isn\'t booking enough" to data-driven operational adjustments.'
   }
 ];
@@ -56,8 +56,6 @@ const IMPACT = [
   },
   {
     number: '03',
-    title: <>Feedback<br/>Loop</>,
-    desc: 'We immediately feed intelligence back to the AE and SDR to pivot messaging based on live market reactions.',
     bullets: [
       'Rapid iteration on outbound sequences from real call data',
       'Continuous SDR coaching on vertical-specific pushback',
@@ -69,7 +67,7 @@ const IMPACT = [
 const CORE_OPTIMIZATIONS = [
   {
     title: 'The Tiered Persona Bounty Model',
-    desc: 'Most agencies misprice their own labor. Because S-1 verifies exact persona and quality via transcript, Sellerate can introduce a highly profitable outbound pricing matrix:',
+    desc: 'Because S-1 verifies exact persona and quality via transcript, Sellerate can introduce a highly profitable outbound pricing matrix:',
     pricing: [
       { label: 'Tier 3 (Manager/Director):', value: '$180 (Base)' },
       { label: 'Tier 2 (VP/SVP):', value: '$300 (Premium)' },
@@ -149,7 +147,7 @@ export default function SelleratePitchPage() {
             The failure isn't the execution. The failure is <span style={{ color: 'var(--accent)' }}>executing blind</span> without alignment or a mechanism to course-correct.
           </h1>
           <p className={styles.heroBody}>
-            You have built world-class Sales Development Infrastructure. Your SDRs hit their KPIs. But activity without intelligence is just noise. When pipeline dries up, Sellerate takes the blame for operating on assumptions instead of data—breakdowns that happen because the client left you blind.
+            You built world-class Sales Development Infrastructure. Your SDRs hit their KPIs. But activity without intelligence produces noise. When buyers stop converting, Sellerate takes the blame for operating on assumptions instead of data. These breakdowns happen because the client left you blind.
           </p>
         </div>
       </section>
@@ -205,7 +203,7 @@ export default function SelleratePitchPage() {
             S-1 acts as your <span style={{ color: 'var(--accent)' }}>GTM Operating System.</span>
           </h2>
           <p className="body-lg" style={{ marginTop: 32, color: 'var(--text-body)' }}>
-            We shift your outbound motion from a vendor service to an indispensable, data-driven engine embedded deeply within the client&apos;s organization.
+            We shift your outbound motion from a vendor service to an indispensable, data-driven engine embedded within the client&apos;s organization.
           </p>
         </div>
       </section>
@@ -299,7 +297,7 @@ export default function SelleratePitchPage() {
           <div className="section-label" style={{ color: 'var(--accent)' }}>High-Margin Offerings</div>
           <h2 className="h2" style={{ marginTop: 16 }}>Product Expansion Models</h2>
           <p className="body-lg" style={{ marginTop: 24, marginBottom: 48 }}>
-            Together, we immediately expand your capabilities into specialized, high-margin product offerings that differentiate Sellerate from any competitor in the market.
+            Together, we expand your capabilities into specialized, high-margin product offerings that differentiate Sellerate from any competitor in the market.
           </p>
 
           <div style={{ padding: '0 8px' }}>
@@ -307,7 +305,7 @@ export default function SelleratePitchPage() {
               {/* GROUP 1: CORE OPTIMIZATIONS */}
               <div style={{ marginBottom: 72 }}>
                 <h3 className="h3" style={{ marginBottom: 12, borderBottom: '1px solid rgba(255,255,255,0.1)', paddingBottom: 16 }}>Core Model Overhauls</h3>
-                <p className="body-sm" style={{ color: 'var(--text-secondary)', marginBottom: 32 }}>Variants of the current SDR model that extract higher value strictly through exact, transcript-verified tiering structures.</p>
+                <p className="body-sm" style={{ color: 'var(--text-secondary)', marginBottom: 32 }}>Variants of the current SDR model that extract higher value through exact transcript-verified tiering structures.</p>
                 
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24 }}>
                   {CORE_OPTIMIZATIONS.map((item, index) => (
@@ -338,7 +336,7 @@ export default function SelleratePitchPage() {
               {/* GROUP 2: NET-NEW OFFERINGS */}
               <div>
                 <h3 className="h3" style={{ color: 'var(--accent)', marginBottom: 12, borderBottom: '1px solid rgba(255,255,255,0.1)', paddingBottom: 16 }}>Net-New Deployments</h3>
-                <p className="body-sm" style={{ color: 'var(--text-secondary)', marginBottom: 24 }}>Entirely new product capabilities resulting from S-1's strategic alignment. These models differentiate Sellerate from any standard SDR firm.</p>
+                <p className="body-sm" style={{ color: 'var(--text-secondary)', marginBottom: 24 }}>New product capabilities resulting from S-1's strategic alignment. These models differentiate Sellerate from any standard SDR firm.</p>
 
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 24 }}>
                   {NET_NEW_OFFERINGS.map((item, index) => (
@@ -380,7 +378,7 @@ export default function SelleratePitchPage() {
             <div className="card">
               <h3 className="h3">S-1 Operates <br/><span className="accent-text" style={{fontSize: 16}}>(Strategic & Diagnostic Layer)</span></h3>
               <ul className={styles.divisionList}>
-                <li className="body-md"><strong>Executive Alignment & Reporting:</strong> We define executive alignment, outline exact responsibilities, and enforce ongoing, transparent reporting to completely eliminate the void between the client organization and Sellerate.</li>
+                <li className="body-md"><strong>Executive Alignment & Reporting:</strong> We define executive alignment, outline exact responsibilities, and enforce ongoing, transparent reporting to eliminate the void between the client organization and Sellerate.</li>
                 <li className="body-md"><strong>Foundation Building:</strong> We deploy the complete GTM architecture—constructing the master playbooks, competitive frameworks, enablement training structures, and the overarching outbound strategy that powers the execution floor.</li>
                 <li className="body-md"><strong>Opportunity Validation:</strong> We substantiate the exact value your SDRs generate. By analyzing transcripts, we identify crucial adjustments that shorten misdirection, increase the probability of qualified pipeline growth, and enforce absolute transparency in GTM opportunity accuracy.</li>
               </ul>
@@ -390,7 +388,7 @@ export default function SelleratePitchPage() {
               <h3 className="h3">Sellerate Executes <br/><span className="muted-text" style={{fontSize: 16}}>(Execution & Scaling Layer)</span></h3>
               <ul className={styles.divisionList}>
                 <li className="body-md"><strong>Elite SDR Execution:</strong> Your team owns the outbound activity, running the plays powered by verified data instead of assumptions.</li>
-                <li className="body-md"><strong>Account Management:</strong> Your AMs retain full control over day-to-day SDR management, utilizing S-1's intelligence to instantly adjust strategy in the field.</li>
+                <li className="body-md"><strong>Account Management:</strong> Your AMs retain full control over day-to-day SDR management, utilizing S-1's intelligence to adjust strategy in the field.</li>
                 <li className="body-md"><strong>Infrastructure & Scale:</strong> You own the talent engine, rapidly spinning up dedicated pods and sprint teams to dominate the pipeline.</li>
               </ul>
             </div>
