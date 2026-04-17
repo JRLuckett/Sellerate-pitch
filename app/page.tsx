@@ -146,7 +146,7 @@ export default function SelleratePitchPage() {
         <div className={`container ${styles.heroContent}`}>
           <div className="section-label" style={{ marginBottom: 24 }}>The Reality</div>
           <h1 className={styles.heroTitle}>
-            Sellerate built the execution engine. S-1 provides the <span style={{ color: 'var(--accent)' }}>performance multiplier</span> that guarantees success.
+            Sellerate built the execution engine. S-1 provides the <span style={{ color: 'var(--accent)' }}>performance multiplier</span> that drives predictable success.
           </h1>
           <p className={styles.heroBody}>
             You maintain a strong operational reputation for outbound execution. But clients continually force your SDRs to generate pipeline on top of an untested foundation. S-1 intervenes to enforce executive alignment, extract historical baselines, and diagnose deal breakdowns—ensuring your team operates with a significantly higher probability of success.
