@@ -56,7 +56,7 @@ const IMPACT = [
   },
   {
     number: '03',
-    title: <>The Feedback<br/>Loop</>,
+    title: <>Feedback<br/>Loop</>,
     desc: 'We translate raw field data into executive decisions, eliminating the void between your SDRs and the organization\'s leadership.',
     bullets: [
       'Rapid iteration on outbound sequences from real call data',
