@@ -30,7 +30,7 @@ export default function ProposalPage() {
           </h1>
         </header>
 
-        <section style={{ marginBottom: 48 }}>
+        <section style={{ marginBottom: 24 }}>
           <h2 style={{ fontSize: 24, fontWeight: 700, marginBottom: 16, borderBottom: '1px solid #eaeaea', paddingBottom: 8 }}>
             1. The Current State: Execution Excellence at Scale
           </h2>
@@ -42,7 +42,7 @@ export default function ProposalPage() {
           </p>
         </section>
 
-        <section style={{ marginBottom: 48 }}>
+        <section style={{ marginBottom: 24 }}>
           <h2 style={{ fontSize: 24, fontWeight: 700, marginBottom: 16, borderBottom: '1px solid #eaeaea', paddingBottom: 8 }}>
             2. The Core Misalignment (Why Engagements Fail)
           </h2>
@@ -57,7 +57,7 @@ export default function ProposalPage() {
           </p>
         </section>
 
-        <section style={{ marginBottom: 48 }}>
+        <section style={{ marginBottom: 24 }}>
           <h2 style={{ fontSize: 24, fontWeight: 700, marginBottom: 16, borderBottom: '1px solid #eaeaea', paddingBottom: 8 }}>
             3. S-1's Engagement Triggers & Initial Impact
           </h2>
@@ -72,7 +72,7 @@ export default function ProposalPage() {
           </p>
         </section>
 
-        <section style={{ marginBottom: 48 }}>
+        <section style={{ marginBottom: 24 }}>
           <h2 style={{ fontSize: 24, fontWeight: 700, marginBottom: 16, borderBottom: '1px solid #eaeaea', paddingBottom: 8 }}>
             4. Triangulating the Feedback Loop (The Hard Problem)
           </h2>
@@ -95,7 +95,7 @@ export default function ProposalPage() {
           </p>
         </section>
 
-        <section style={{ marginBottom: 48 }}>
+        <section style={{ marginBottom: 24 }}>
           <h2 style={{ fontSize: 24, fontWeight: 700, marginBottom: 16, borderBottom: '1px solid #eaeaea', paddingBottom: 8 }}>
             5. Categorizing the Candidate
           </h2>
@@ -109,7 +109,7 @@ export default function ProposalPage() {
           </p>
         </section>
 
-        <section style={{ marginBottom: 48 }}>
+        <section style={{ marginBottom: 24 }}>
           <h2 style={{ fontSize: 24, fontWeight: 700, marginBottom: 16, borderBottom: '1px solid #eaeaea', paddingBottom: 8 }}>
             6. The Expansion Products as Strategic Accelerants
           </h2>
