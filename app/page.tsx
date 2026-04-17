@@ -396,13 +396,12 @@ export default function SelleratePitchPage() {
 
           <div style={{ marginTop: 80, textAlign: 'center' }}>
             <h3 className="h3" style={{ marginBottom: 24 }}>Ready to view the strategic framework?</h3>
-            <a 
-              href="/s1-sellerate-proposal.pdf" 
-              download 
+            <Link 
+              href="/proposal" 
               style={{ display: 'inline-block', padding: '16px 32px', backgroundColor: 'var(--accent)', color: '#000', fontWeight: 800, textDecoration: 'none', borderRadius: 4, textTransform: 'uppercase', letterSpacing: '1px' }}
             >
-              Download PDF Proposal
-            </a>
+              Read full proposal &rarr;
+            </Link>
           </div>
 
         </div>
