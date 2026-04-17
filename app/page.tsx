@@ -60,7 +60,7 @@ const IMPACT = [
     desc: 'We translate raw field data into executive decisions, eliminating the void between your SDRs and the organization\'s leadership.',
     bullets: [
       'Rapid iteration on outbound sequences from real call data',
-      'Continuous SDR coaching on vertical-specific pushback',
+      'Equipping AMs with transcript insights to direct and coach SDRs',
       'Bi-weekly C-suite reviews to address concerns and share successes'
     ]
   }
