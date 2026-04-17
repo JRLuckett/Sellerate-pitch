@@ -151,6 +151,16 @@ export default function SelleratePitchPage() {
           <p className={styles.heroBody}>
             You maintain a strong operational reputation for outbound execution. But clients continually force your SDRs to generate pipeline on top of an untested foundation. S-1 intervenes to enforce executive alignment, extract historical baselines, and diagnose deal breakdowns—ensuring your team operates with a significantly higher probability of success.
           </p>
+          <div style={{ marginTop: 32 }}>
+            <Link 
+              href="/proposal" 
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ display: 'inline-block', padding: '16px 32px', backgroundColor: 'var(--accent)', color: '#000', fontWeight: 800, textDecoration: 'none', borderRadius: 4, textTransform: 'uppercase', letterSpacing: '1px' }}
+            >
+              Read full proposal &rarr;
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -394,18 +404,6 @@ export default function SelleratePitchPage() {
                 <li className="body-md"><strong>Rapid Experiment Leveraging:</strong> Provides the specialized talent pods strictly necessary to conduct targeted market stress-tests and launch blitzes.</li>
               </ul>
             </div>
-          </div>
-
-          <div style={{ marginTop: 80, textAlign: 'center' }}>
-            <h3 className="h3" style={{ marginBottom: 24 }}>Ready to view the strategic framework?</h3>
-            <Link 
-              href="/proposal" 
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{ display: 'inline-block', padding: '16px 32px', backgroundColor: 'var(--accent)', color: '#000', fontWeight: 800, textDecoration: 'none', borderRadius: 4, textTransform: 'uppercase', letterSpacing: '1px' }}
-            >
-              Read full proposal &rarr;
-            </Link>
           </div>
 
         </div>
