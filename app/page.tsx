@@ -24,7 +24,7 @@ const PILLARS = [
   {
     title: <>Triangulating the Breakdown<br/><span className={styles.pillarAccent}>(The Feedback Loop)</span></>,
     problem: 'An SDR books a meeting. The opp is created. Then the deal stalls. If repeatability is undefined, low conversions aren\'t the SDR’s fault—it is a failure to triangulate variables (e.g., booked wrong persona vs. AE blew discovery).',
-    fix: 'S-1 Intervention: We govern opportunity validation. S-1 audits the meeting transcripts to catch precise, nuanced outliers. We construct the missing feedback loop that passes vital knowledge from the SDR, past the AE, and directly to Leadership so the root cause is treated.'
+    fix: 'S-1 Intervention: We govern opportunity validation. S-1 audits the meeting transcripts to catch precise, nuanced outliers. We construct the missing feedback loop that passes vital knowledge from the SDR directly to Leadership, amplifying the positive impact of Sellerate\'s execution engine over the long term.'
   },
   {
     title: <>The Accountability Void<br/><span className={styles.pillarAccent}>(The Consequence)</span></>,
@@ -144,10 +144,10 @@ export default function SelleratePitchPage() {
         <div className={`container ${styles.heroContent}`}>
           <div className="section-label" style={{ marginBottom: 24 }}>The Reality</div>
           <h1 className={styles.heroTitle}>
-            The breakdown isn't the execution. The breakdown is anticipating scale on top of an <span style={{ color: 'var(--accent)' }}>untested foundation.</span>
+            Sellerate built the execution engine. S-1 provides the <span style={{ color: 'var(--accent)' }}>performance multiplier</span> that guarantees it scales.
           </h1>
           <p className={styles.heroBody}>
-            You built world-class Sales Development Infrastructure. Your SDRs execute. But clients continually expect immediate deal generation from Day 1, despite lacking historical baselines, proven messaging, and a repeatable sales process. When pipeline stalls, Sellerate absorbs the blame for operating on the client's untested assumptions.
+            You maintain a strong operational reputation for outbound execution. But clients continually force your SDRs to generate pipeline on top of an untested foundation. S-1 intervenes to enforce executive alignment, extract historical baselines, and diagnose deal breakdowns—ensuring your team operates with a significantly higher probability of success.
           </p>
         </div>
       </section>
@@ -200,10 +200,10 @@ export default function SelleratePitchPage() {
       <section className={styles.punctuationSection}>
         <div className="container" style={{maxWidth: 1000}}>
           <h2 className={styles.punctuationText}>
-            S-1 acts as your <span style={{ color: 'var(--accent)' }}>GTM Operating System.</span>
+            S-1 acts as your <span style={{ color: 'var(--accent)' }}>Performance Multiplier.</span>
           </h2>
           <p className="body-lg" style={{ marginTop: 32, color: 'var(--text-body)' }}>
-            We shift your outbound motion from a vendor service to an indispensable, data-driven engine embedded within the client&apos;s organization.
+            We prevent your team from doing strategy work for free. We shift your outbound motion from a vendor service to an indispensable, data-driven revenue multiplier that generates undeniable, recognized value.
           </p>
         </div>
       </section>
