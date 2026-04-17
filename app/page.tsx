@@ -47,7 +47,7 @@ const IMPACT = [
   {
     number: '02',
     title: <>Opportunity<br/>Intelligence</>,
-    desc: 'S-1 audits each meeting transcripts to identify key outliers and patterns. No more guessing, only chasing repeatability.',
+    desc: 'S-1 audits each meeting transcript to identify key outliers and patterns. No more guessing, only chasing repeatability.',
     bullets: [
       'Pass/Fail grading on Account Executive discovery execution',
       'Identify recurring market objections and trap-setting failures',
@@ -56,6 +56,8 @@ const IMPACT = [
   },
   {
     number: '03',
+    title: <>The Feedback<br/>Loop</>,
+    desc: 'We translate raw field data into executive decisions, eliminating the void between your SDRs and the organization\'s leadership.',
     bullets: [
       'Rapid iteration on outbound sequences from real call data',
       'Continuous SDR coaching on vertical-specific pushback',
@@ -155,7 +157,7 @@ export default function SelleratePitchPage() {
       {/* 2. THE 4 PILLARS (2x2 GRID WITH EXPANDABLE FIX) */}
       <section className={styles.pillarsSection}>
         <div className="container" style={{maxWidth: 1100}}>
-          <div className="section-label">The Anatomy of Churn</div>
+          <div className="section-label">The Anatomy of a Broken Funnel</div>
           <h2 className="h2" style={{ marginTop: 16 }}>The Four Points of Failure</h2>
           
           <div className={styles.pillarGrid2x2} style={{border: '1px solid var(--border)'}}>
