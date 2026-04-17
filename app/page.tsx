@@ -398,6 +398,8 @@ export default function SelleratePitchPage() {
             <h3 className="h3" style={{ marginBottom: 24 }}>Ready to view the strategic framework?</h3>
             <Link 
               href="/proposal" 
+              target="_blank"
+              rel="noopener noreferrer"
               style={{ display: 'inline-block', padding: '16px 32px', backgroundColor: 'var(--accent)', color: '#000', fontWeight: 800, textDecoration: 'none', borderRadius: 4, textTransform: 'uppercase', letterSpacing: '1px' }}
             >
               Read full proposal &rarr;
